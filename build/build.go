@@ -7,12 +7,12 @@ import (
 )
 
 type Config struct {
-	workDir        string
-	goRoot         string
-	baseDir        string
-	buildTest      bool
-	pranaOSVersion string
-	goArgs         []string
+	workDir          string
+	goRoot           string
+	baseDir          string
+	buildTest        bool
+	vultureOSVersion string
+	goArgs           []string
 }
 
 type Builder struct {
@@ -28,7 +28,7 @@ func newBuilder(cfg Config) *Builder {
 
 func (b *Builder) Build() error {
 	if b.cfg.baseDir == "" {
-		basedir, err := ioutil.TempDir("", "pranaos-build")
+		basedir, err := ioutil.TempDir("", "vultureos-build")
 		if err != nil {
 			return err
 		}
